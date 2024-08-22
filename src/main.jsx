@@ -6,7 +6,7 @@ import App from './App'
 import Home from './Pages/Home'
 import Workout from './Pages/Workout'
 import Diet from './Pages/Diet'
-import Footer from './components/Footer'
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(

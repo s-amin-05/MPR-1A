@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import CTA from './CTA'
+import LogoImg from '../assets/logo.jpeg'
 
 const appName = "Weather App"
 
@@ -8,10 +9,10 @@ function Navbar() {
   
   return (
     <>
-      <div className={`bg-black flex items-center justify-around text-white h-14 `} 
+      <div className={`bg-black flex items-center justify-around text-white h-14 fixed w-screen`} 
       >
         <Link to={"/"} className='text-contrastColor'>
-          {/* Logo */}
+          <img src={LogoImg} className='h-8'/>
         </Link>
         <ul className='flex w-2/4 justify-center gap-20'>
           <li>
