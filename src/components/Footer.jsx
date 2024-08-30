@@ -24,7 +24,7 @@ function Footer() {
                     <Link to={''}>Home</Link>
                     <Link to={'/Workout'}>Workout</Link>
                     <Link to={'/Diet'}>Diet</Link>
-                    <Link>About Us</Link>
+                    <Link to={'/'}>About Us</Link>
                 </ul>
             </div>
         </div>

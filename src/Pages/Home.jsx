@@ -3,6 +3,7 @@ import HeroImg from '../assets/hero.jpeg'
 import WorkoutImg from '../assets/workout.jpg'
 import DietImg from '../assets/diet.jpeg'
 
+
 function Home() {
     return (
         <>
