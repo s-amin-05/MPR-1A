@@ -38,7 +38,7 @@ const WorkoutPlans = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center bg-gray-50 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col items-center bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
       <h1 className="text-4xl font-bold text-gray-800 text-center mb-8">Workout Plans</h1>
       <p className="text-center text-gray-600 mb-6">
         Choose a workout plan based on your fitness level and goals.
