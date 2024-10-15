@@ -9,7 +9,7 @@ function Navbar() {
   
   return (
     <>
-      <div className={`bg-black flex items-center justify-around text-white h-14 w-screen `} 
+      <div className={`bg-black flex items-center justify-around text-white h-14 w-full overflow-y-hidden `} 
       >
         <Link to={"/"} >
           <img src={LogoImg} className='h-14'/>

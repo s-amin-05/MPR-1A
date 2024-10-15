@@ -50,7 +50,7 @@ const DietPlanner = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-gray-50 min-h-screen py-10 px-4 sm:px-6 lg:px-8 my-10">
+    <div className="flex flex-col items-center bg-gray-50 min-h-screen py-10 px-4 sm:px-6 lg:px-8 my-10 overflow-x-hidden">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
         <h1 className="text-4xl font-bold text-gray-800 text-center mb-6">Personalized Diet Planner</h1>
         <p className="text-center text-gray-600 mb-4">
