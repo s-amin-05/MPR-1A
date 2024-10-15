@@ -6,7 +6,7 @@ import TwitterIcon from '../assets/logos--twitter.svg'
 
 function Footer() {
     return (
-        <div className='bg-gray-300 '>
+        <div className='bg-gray-300 h-auto pt-10'>
             <hr className='h-[2px] bg-gray-500'/>
             <div className='flex flex-col items-center justify-center py-2'>
                 <div className='flex items-center justify-center font-bold text-xl'>

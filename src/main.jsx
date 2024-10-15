@@ -5,7 +5,7 @@ import './index.css'
 import App from './App'
 import Home from './Pages/Home'
 import Workout from './Pages/Workout'
-import Diet from './Pages/Diet'
+import Diet from './Pages/Diet/Diet'
 import Login from './components/Login'
 
 

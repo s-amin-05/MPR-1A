@@ -1,10 +1,10 @@
 import React from 'react'
-import Plans from './Diet/Plans'
-import DietPlanner from './Diet/DietPlanner'
+import Plans from './Plans'
+import DietPlanner from './DietPlanner'
 
 function Diet() {
     return (
-        <div className='h-screen bg-gray-300 flex justify-center items-center text-xl pt-10'>
+        <div className='h-auto bg-gray-300 flex justify-center items-center text-xl pt-10'>
             
             {/* <Plans /> */}
             <DietPlanner/>
