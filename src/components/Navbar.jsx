@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import CTA from './CTA'
 import LogoImg from '../assets/logo1.png'
 
-const appName = "Weather App"
 
 function Navbar() {
   
+
+    
+    const [isLogin, setIsLogin] = useState(false);
   return (
     <>
       <div className={`bg-black flex items-center justify-around text-white h-14 w-full overflow-y-hidden `} 
@@ -43,8 +45,10 @@ function Navbar() {
 
           </li>
             </ul>
-        <Link to={'/Login'} className='text-white h-full flex items-center'>
-            <CTA content="Login"/>
+        <Link to={'/Login'} 
+        onClick={() => {setIsLogin(true)}}
+        className='text-white h-full flex items-center'>
+            {!isLogin ? <CTA content="Login"/> : <div>User</div>}
         </Link>
       </div>
     </>

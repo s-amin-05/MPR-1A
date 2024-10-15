@@ -1,6 +1,16 @@
 import Logo from '../assets/logo1.png'
+import { useNavigate } from 'react-router';
+
 
 export default function Login() {
+
+    
+    const navigate = useNavigate();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate('/');
+    }
+
     return (
       <>
         {/*
@@ -24,7 +34,7 @@ export default function Login() {
           </div>
   
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form action="#" method="POST" className="space-y-6">
+            <form onSubmit={handleSubmit} method="POST" className="space-y-6">
               <div>
                 <label htmlFor="email" className="block text-sm font-medium leading-6 text-black">
                   Email address
@@ -67,6 +77,7 @@ export default function Login() {
               <div>
                 <button
                   type="submit"
+                  
                   className="flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
                 >
                   Sign in
