@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } 
 import './index.css'
 import App from './App'
 import Home from './Pages/Home'
-import Workout from './Pages/Workout'
+import Workout from './Pages/Workout/Workout'
 import Diet from './Pages/Diet/Diet'
 import Login from './components/Login'
 

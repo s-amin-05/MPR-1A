@@ -42,7 +42,7 @@ const BMICalculator = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-gray-100 px-10 py-10 overflow-x-hidden">
+    <div className="flex flex-col items-center bg-gray-100 px-10 py-10 overflow-x-hidden shadow-2xl">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">BMI Calculator</h1>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
@@ -51,7 +51,7 @@ const BMICalculator = () => {
             <label className="block text-sm font-medium text-gray-700">Weight (kg)</label>
             <input
               type="number"
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               placeholder="Enter your weight"
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
@@ -61,7 +61,7 @@ const BMICalculator = () => {
             <label className="block text-sm font-medium text-gray-700">Height (cm)</label>
             <input
               type="number"
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               placeholder="Enter your height"
               value={height}
               onChange={(e) => setHeight(e.target.value)}
@@ -70,7 +70,7 @@ const BMICalculator = () => {
 
           <button
             type="submit"
-            className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-black"
           >
             Calculate BMI
           </button>

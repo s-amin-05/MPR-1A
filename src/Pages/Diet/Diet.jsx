@@ -5,7 +5,7 @@ import BMICalculator from './BMICalculator'
 
 function Diet() {
     return (
-        <div className='h-auto bg-gray-300 flex justify-center items-center text-xl pt-10 flex-col overflow-x-hidden'>
+        <div className='h-auto flex justify-center items-center text-xl pt-10 flex-col overflow-x-hidden pb-10'>
             
             {/* <Plans /> */}
             <DietPlanner/>

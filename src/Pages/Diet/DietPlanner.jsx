@@ -50,7 +50,7 @@ const DietPlanner = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-gray-50 min-h-screen py-10 px-4 sm:px-6 lg:px-8 my-10 overflow-x-hidden">
+    <div className="flex flex-col items-center bg-gray-50 min-h-screen py-10 px-4 sm:px-6 lg:px-8 my-10 overflow-x-hidden shadow-2xl">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
         <h1 className="text-4xl font-bold text-gray-800 text-center mb-6">Personalized Diet Planner</h1>
         <p className="text-center text-gray-600 mb-4">
@@ -61,7 +61,7 @@ const DietPlanner = () => {
           <div>
             <label className="block text-sm font-medium text-gray-700">Goal</label>
             <select
-              className="block w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="block w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               value={goal}
               onChange={(e) => setGoal(e.target.value)}
             >
@@ -76,7 +76,7 @@ const DietPlanner = () => {
             <label className="block text-sm font-medium text-gray-700">Daily Caloric Intake</label>
             <input
               type="number"
-              className="block w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="block w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               placeholder="e.g. 2000"
               value={calories}
               onChange={(e) => setCalories(e.target.value)}
@@ -86,7 +86,7 @@ const DietPlanner = () => {
           <div>
             <label className="block text-sm font-medium text-gray-700">Food Preference</label>
             <select
-              className="block w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="block w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               value={foodPreference}
               onChange={(e) => setFoodPreference(e.target.value)}
             >
@@ -99,7 +99,7 @@ const DietPlanner = () => {
 
           <button
             type="submit"
-            className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
             disabled={loading}
           >
             {loading ? 'Generating...' : 'Generate Diet Plan'}
@@ -114,7 +114,7 @@ const DietPlanner = () => {
               {dietPlan.map((meal, index) => (
                 <li key={index} className="text-gray-700">
                   {meal.title} <br />
-                  <a href={`https://spoonacular.com/recipes/${meal.title}-${meal.id}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline hover:text-blue-700">
+                  <a href={`https://spoonacular.com/recipes/${meal.title}-${meal.id}`} target="_blank" rel="noopener noreferrer" className="text-red-500 underline hover:text-blue-700">
                     View Recipe
                   </a>
                 </li>
