@@ -3,20 +3,17 @@ import { Link, NavLink } from 'react-router-dom'
 import CTA from './CTA'
 import LogoImg from '../assets/logo1.png'
 
-
 function Navbar() {
   
-
-    
     const [isLogin, setIsLogin] = useState(false);
   return (
     <>
       <div className={`bg-black flex items-center justify-around text-white h-14 w-full overflow-y-hidden `} 
       >
-        <Link to={"/"} >
+        <Link to={"/"} className='flex justify-center'>
           <img src={LogoImg} className='h-14'/>
         </Link>
-        <ul className='flex w-2/4 justify-center gap-20'>
+        <ul className='flex w-2/4 items-center justify-center gap-20'>
           <li>
             <NavLink to={'/'} 
               className={({isActive})=>(
