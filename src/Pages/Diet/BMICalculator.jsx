@@ -42,7 +42,7 @@ const BMICalculator = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-gray-100 px-10 py-10 overflow-x-hidden shadow-2xl">
+    <div className="flex flex-col items-center bg-gray-100 px-10 py-10 overflow-x-hidden shadow-2xl w-2/5">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">BMI Calculator</h1>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
