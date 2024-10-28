@@ -6,9 +6,9 @@ import TwitterIcon from '../assets/logos--twitter.svg'
 
 function Footer() {
     return (
-        <div className='bg-gray-300 pt-10 '>
+        <div className='bg-gray-300 h-auto '>
             <hr className='h-[2px] bg-gray-500 '/>
-            <div className='flex flex-col items-center justify-center py-2'>
+            <div className='flex flex-col items-center justify-center py-6'>
                 <div className='flex items-center justify-center font-bold text-xl'>
                     FITVERSE 
                 </div>
@@ -24,7 +24,7 @@ function Footer() {
                     <Link to={''}>Home</Link>
                     <Link to={'/Workout'}>Workout</Link>
                     <Link to={'/Diet'}>Diet</Link>
-                    <Link>About Us</Link>
+                    <Link to={'/'}>About Us</Link>
                 </ul>
             </div>
         </div>

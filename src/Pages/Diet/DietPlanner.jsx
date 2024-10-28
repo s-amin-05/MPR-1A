@@ -9,22 +9,29 @@ const DietPlanner = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const APP_ID = '683568e6'; // Your Edamam APP ID
-  const API_KEY = 'd44f409ff0108c53a5d3b72ed8b1a7ae'; // Your Edamam API Key
+ 
 
   const fetchDietPlan = async () => {
     try {
       setLoading(true);
-      let dietType = '';
+      setError('');
 
-      if (foodPreference === 'vegetarian') dietType = 'vegetarian';
-      if (foodPreference === 'vegan') dietType = 'vegan';
+      // Map the user's inputs to Spoonacular's diet and nutrient parameters
+      let diet = '';
+      if (foodPreference === 'vegetarian') diet = 'vegetarian';
+      if (foodPreference === 'vegan') diet = 'vegan';
+      
+      let targetGoal = '';
+      if (goal === 'weight loss') targetGoal = 'weight loss';
+      if (goal === 'muscle gain') targetGoal = 'high-protein';
+      if (goal === 'balanced') targetGoal = 'balanced';
 
+      // Fetch meal plans based on the user's inputs
       const response = await axios.get(
-        `https://api.edamam.com/search?q=${goal}&app_id=${APP_ID}&app_key=${API_KEY}&calories=${calories}&diet=${dietType}`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${import.meta.env.VITE_API_KEY}&diet=${diet}&maxCalories=${calories}&number=5`
       );
 
-      setDietPlan(response.data.hits);
+      setDietPlan(response.data.results);
       setLoading(false);
     } catch (error) {
       console.error('Error fetching diet plan:', error);
@@ -35,7 +42,6 @@ const DietPlanner = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError('');
     if (!goal || !calories || !foodPreference) {
       setError('Please fill out all fields.');
       return;
@@ -44,7 +50,7 @@ const DietPlanner = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-gray-50 min-h-screen my-10 py-10 px-4 sm:px-6 lg:px-8">
+    <div className="w-2/5 flex flex-col items-center bg-gray-50 min-h-screen py-10 px-4 sm:px-6 lg:px-8 mb-10 overflow-x-hidden shadow-2xl">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
         <h1 className="text-4xl font-bold text-gray-800 text-center mb-6">Personalized Diet Planner</h1>
         <p className="text-center text-gray-600 mb-4">
@@ -55,7 +61,7 @@ const DietPlanner = () => {
           <div>
             <label className="block text-sm font-medium text-gray-700">Goal</label>
             <select
-              className="block w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="block w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               value={goal}
               onChange={(e) => setGoal(e.target.value)}
             >
@@ -70,7 +76,7 @@ const DietPlanner = () => {
             <label className="block text-sm font-medium text-gray-700">Daily Caloric Intake</label>
             <input
               type="number"
-              className="block w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="block w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               placeholder="e.g. 2000"
               value={calories}
               onChange={(e) => setCalories(e.target.value)}
@@ -80,7 +86,7 @@ const DietPlanner = () => {
           <div>
             <label className="block text-sm font-medium text-gray-700">Food Preference</label>
             <select
-              className="block w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="block w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
               value={foodPreference}
               onChange={(e) => setFoodPreference(e.target.value)}
             >
@@ -93,7 +99,7 @@ const DietPlanner = () => {
 
           <button
             type="submit"
-            className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
             disabled={loading}
           >
             {loading ? 'Generating...' : 'Generate Diet Plan'}
@@ -107,9 +113,8 @@ const DietPlanner = () => {
             <ul className="list-disc list-inside space-y-2">
               {dietPlan.map((meal, index) => (
                 <li key={index} className="text-gray-700">
-                  {meal.recipe.label} - {Math.round(meal.recipe.calories)} calories
-                  <br />
-                  <a href={meal.recipe.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline hover:text-blue-700">
+                  {meal.title} <br />
+                  <a href={`https://spoonacular.com/recipes/${meal.title}-${meal.id}`} target="_blank" rel="noopener noreferrer" className="text-red-500 underline hover:text-blue-700">
                     View Recipe
                   </a>
                 </li>

@@ -4,8 +4,9 @@ import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } 
 import './index.css'
 import App from './App'
 import Home from './Pages/Home'
-import Workout from './Pages/Workout'
-import Diet from './Pages/Diet'
+import Workout from './Pages/Workout/Workout'
+import Diet from './Pages/Diet/Diet'
+import Login from './components/Login'
 
 
 const router = createBrowserRouter(
@@ -14,6 +15,7 @@ const router = createBrowserRouter(
       <Route path='' element={<Home/>}/>
       <Route path='Workout' element={<Workout/>}/>
       <Route path='Diet' element={<Diet/>}/>
+      <Route path='Login' element={<Login/>}/>
     </Route>
   )
 )

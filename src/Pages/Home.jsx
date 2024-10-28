@@ -3,6 +3,7 @@ import HeroImg from '../assets/hero.jpeg'
 import WorkoutImg from '../assets/workout.jpg'
 import DietImg from '../assets/diet.jpeg'
 
+
 function Home() {
     return (
         <>
@@ -13,7 +14,7 @@ function Home() {
                     <h2 className="text-white text-3xl font-bold">Get Lost in Mountains</h2>
                 </div>
             </div> */}
-            <div className='flex items-center justify-center flex-col pt-20'>
+            <div className='flex items-center justify-center flex-col pt-10 '>
 
                 <div style={{
                     backgroundImage: `url(${HeroImg})`,
@@ -21,7 +22,7 @@ function Home() {
                     backgroundPosition: 'center',
                     
                     height: '100vh',
-                }} className='w-2/3 flex justify-start items-center bg-slate-50 bg-gradient-to-r from-white to-black'>
+                }} className='w-2/3 flex justify-start items-center bg-slate-50 bg-gradient-to-r from-white to-black rounded-2xl'>
                     <h1 className='text-black text-4xl font-bold pl-8'>Welcome to Fitverse</h1>
                 </div>
                 <div className='flex justify-around items-center w-1/2 mt-20 gap-10'>
