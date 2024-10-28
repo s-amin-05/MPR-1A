@@ -41,6 +41,15 @@ function Navbar() {
           </NavLink>
 
           </li>
+          <li>
+          <NavLink to={'/Resources'}
+          className={({isActive})=>(
+            `${isActive? `text-red-500 font-bold`: `text-white`}`
+            )}>
+              Resources
+          </NavLink>
+
+          </li>
             </ul>
         <Link to={'/Login'} 
         onClick={() => {setIsLogin(true)}}
