@@ -42,6 +42,15 @@ function Navbar() {
 
           </li>
           <li>
+          <NavLink to={'/Tracker'}
+          className={({isActive})=>(
+            `${isActive? `text-red-500 font-bold`: `text-white`}`
+            )}>
+              Tracker
+          </NavLink>
+
+          </li>
+          <li>
           <NavLink to={'/Resources'}
           className={({isActive})=>(
             `${isActive? `text-red-500 font-bold`: `text-white`}`

@@ -11,15 +11,19 @@ import Resources from './Pages/Resources/Resources'
 import PdfViewer from './Pages/Resources/PdfViewer'
 import DietPdf from './Pages/Resources/DietPdf'
 import WorkoutPdf from './Pages/Resources/WorkoutPdf'
+import HomePage from './Pages/Home/HomePage'
+import GymTracker from './Pages/Tracker/GymTracker'
+
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     
     <Route path='/' element={<App/>}>
-        <Route path='' element={<Home/>}/>
+        <Route path='' element={<HomePage/>}/>
         <Route path='Workout' element={<Workout/>}/>
         <Route path='Diet' element={<Diet/>}/>
+        <Route path='Tracker' element={<GymTracker/>}/>
         <Route path='Login' element={<Login/>}/>
         <Route path='Resources' element={<Resources/>}/>
         <Route path="pdf/Deit.pdf" element={<DietPdf />} />
